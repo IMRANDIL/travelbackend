@@ -9,7 +9,8 @@ const createPin = async (req, res, next) => {
     try {
         const newPin = new Pin(req.body);
         const savedPin = await newPin.save();
-        res.status(200).json(savedPin)
+        res.status(200).json(savedPin);
+        next()
     } catch (error) {
         res.status(500).json(error)
         console.log(error);
@@ -27,7 +28,8 @@ const createPin = async (req, res, next) => {
 const getAllPin = async (req, res, next) => {
     try {
         const pins = await Pin.find();
-        res.status(200).json(pins)
+        res.status(200).json(pins);
+        next()
     } catch (error) {
         res.status(500).json(error)
         console.log(error);
