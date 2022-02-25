@@ -21,11 +21,11 @@ app.use(express.urlencoded({ extended: true }))
 app.use('/api/users', Userrouter)
 app.use('/api/pins', router)
 
-// app.get('/', (req, res, next) => {
-//     res.status(200).send(`<h1>Hey Travel_App_Backend</h1>`);
+app.get('/', (req, res, next) => {
+    res.status(200).send(`<h1>Hey Travel_App_Backend</h1>`);
 
-//     next()
-// })
+    next()
+})
 const PORT = process.env.PORT || 3000;
 
 
